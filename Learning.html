@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/answer" autocomplete="on" method="post">
+        <label for="Num_of_tops">Количество вершин </label><br>
+        <input type="number" id="Num_of_tops" name="Num_of_tops" required value={{data['Num_of_tops']}} readonly><br>
+        <label for="Num_of_ribs">Количество ребер </label><br>
+        <input type="number" id="Num_of_ribs" name="Num_of_ribs" required value={{data['Num_of_ribs']}} readonly><br>
+        <label for="Num_of_inputs">Количество входных вершин</label><br>
+        <input type="number" id="Num_of_inputs" name="Num_of_inputs" value={{data['Num_of_inputs']}} readonly><br>
+        <label for="Function">Вид функции</label><br>
+        <select name="Function" id="Function">
+            <option value="Lineal">Линейная</option>
+            <option value="Sigma">Сигмовидная</option>
+            <option value="Hyper Tang">Гиперболический тангенс</option>
+        </select>
+
+        <table>
+            <tr>
+                <th>Индекс веришны</th>
+                <th>Входное значение</th>
+            </tr>
+            {% for i in range(Num_of_inputs) %}
+            <tr>
+                <td><input type="number" id="{{i}}_index" name="{{i}}_index"></td>
+                <td><input type="number" id="{{i}}_input" name="{{i}}_input" step = "0.001"></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <table>
+            <tr>
+                <th>Вершина выхода</th>
+                <th>Вершина входа</th>
+                <th>Вес ребра</th>
+            </tr>
+            {% for i in range(Num_of_ribs) %}
+            <tr>
+                <td><input type = "number" id = "{{i}}_out" name = "{{i}}_out"></td>
+                <td><input type = "number" id = "{{i}}_in" name = "{{i}}_in"></td>
+                <td><input type = "number" id = "{{i}}_rib" name = "{{i}}_rib" step = "0.001"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="submit">
+
+    </form>
+</body>
+</html>

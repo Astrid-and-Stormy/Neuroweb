@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ans}}<br>
+{{prototypes}}<br>
+{{inputs}}<br>
+{{outputs}}<br>
+    <table>
+        <tr>
+            <th>X</th>
+            <th>Прообразы X</th>
+            <th>input(X)</th>
+            <th>output(X)</th>
+        </tr>
+        {% for i in range(Num_of_tops) %}
+        <tr>
+            <td>{{i}}</td>
+            <td>{{prototypes['{{i}}']}}</td>
+            <td>{{inputs['{{i}}']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <label> MSE = {{MSE}} </label>
+
+</body>
+</html>
