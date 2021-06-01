@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>X</th>
+            <th>Прообразы X</th>
+            <th>input(X)</th>
+            <th>output(X)</th>
+        </tr>
+        {% for i in range(Num_of_tops) %}
+        <tr>
+            <td>{{i}}</td>
+            <td>{% for y in prototypes[i] %} {{y[0]}} {% endfor %}</td>
+            <td>{{inputs[i]}}</td>
+            <td>{{outputs[i]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <label> MSE = {{MSE}} </label>
+
+</body>
+</html>
